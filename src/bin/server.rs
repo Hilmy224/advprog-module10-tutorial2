@@ -21,7 +21,7 @@ async fn handle_connection( addr: SocketAddr,
                 match incoming {
                     Some(Ok(msg)) => {
                         if let Some(text) = msg.as_text() {
-                            println!("From client {addr:?} {text:?}");
+                            println!("From client with adress {addr:?} {text:?}");
                             bcast_tx.send(text.into())?;
                         }
                     }
@@ -46,7 +46,7 @@ async fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
 
     loop {
         let (socket, addr) = listener.accept().await?;
-        println!("New connection from {addr:?}");
+        println!("New connection from Hilmy's Computer with adress {addr:?}");
         let bcast_tx = bcast_tx.clone();
         tokio::spawn(async move {
             let ws_stream = ServerBuilder::new().accept(socket).await?;

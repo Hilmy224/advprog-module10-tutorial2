@@ -15,3 +15,18 @@ How to run it
 + Running Modified server.rs and client.rs:
 ![alt text](image-2.png)
 + We can conclude that modifying the ports does not change how the application works. This is because both the server and client utilize the WebSocket protocol provided by tokio_websockets for communication between them.
+
+## Experiment 2.3: Small changes, add IP and Port
++ Changed Code:<br>
++ `server.rs`<br>
+![alt text](image-3.png)
+---
+![alt text](image-4.png)
+---
++ `client.rs`<br>
+![alt text](image-5.png)
+---
++ Running the program:
+![alt text](image-6.png)
+
++ I added some extra context by adding some string like `Hilmy's Computer` or `from Hilmy's Computer` in the output messages that indicates the name from clients.
