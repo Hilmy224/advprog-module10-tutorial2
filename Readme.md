@@ -8,3 +8,10 @@ How to run it
 + Those ports being signaled in the servers in the example: `New connection from 127.0.0.1:50245` , `New connection from 127.0.0.1:50299`, `New connection from 127.0.0.1:50300`
 + Afterwards clients from diffrent ports are able to send messages to the server, and when they do, these messages appear both in the server terminal and in the terminals of other clients. 
 + Each message notification in the terminal specifies whcih port of the client from which the message originated.
+
+## Experiment 2.2: Modifying port
++ Changing ports from `2000` to `8080`:
+![alt text](image-1.png)
++ Running Modified server.rs and client.rs:
+![alt text](image-2.png)
++ We can conclude that modifying the ports does not change how the application works. This is because both the server and client utilize the WebSocket protocol provided by tokio_websockets for communication between them.
